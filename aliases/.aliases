@@ -1,0 +1,7 @@
+#Get WAN ip address
+alias myip="curl ifconfig.me"
+alias code="/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=code --file-forwarding com.visualstudio.code --reuse-window @@ %F @@"
+alias lookingglass="$HOME/.looking-glass/LookingGlass/client/build/looking-glass-client"
+alias python3="/usr/bin/python3.10"
+alias gputest="glmark2"
+alias showdeviceslan="sudo nmap -sP 192.168.178.0/24 | grep  "Nmap scan report for" | awk -F ' '  '{print $5, $6}'"

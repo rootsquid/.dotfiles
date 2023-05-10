@@ -1,0 +1,41 @@
+#Download youtube video and convert to mp3
+yt2mp3(){
+   yt-dlp --extract-audio --audio-format mp3 $1
+}
+
+function o() {
+	if [ $# -eq 0 ]; then
+		open .;
+	else
+		open "$@";
+	fi;
+}
+
+
+findstr(){
+	grep -rni $pwd -e "$1" 2>/dev/null
+}
+
+
+findfile(){
+	find . -iname "$1" 2>/dev/null
+}
+
+finddir(){
+	find . -iname "$1" -type d 2>/dev/null
+}
+
+# Determine size of a file or total size of a directory
+fs() {
+	if du -b /dev/null > /dev/null 2>&1; then
+		local arg=-sbh
+	else
+		local arg=-sh
+	fi
+	# shellcheck disable=SC2199
+	if [[ -n "$@" ]]; then
+		du $arg -- "$@"
+	else
+		du $arg -- .[^.]* *
+	fi
+}
