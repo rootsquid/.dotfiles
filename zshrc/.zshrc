@@ -115,6 +115,7 @@ prompt_context() {
 
 #For pyenv
 export PATH="$HOME/.pyenv/bin:$PATH"
+export CUDA_HOME=/usr/local/cuda
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
